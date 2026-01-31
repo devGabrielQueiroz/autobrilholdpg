@@ -63,8 +63,13 @@ export function HeroSection() {
           {/* Headline principal */}
           <h1 className="animate-slide-up text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-cream leading-tight mb-6">
             Seu carro com{' '}
-            <span className="relative">
-              <span className="text-gradient-gold">brilho de novo</span>
+            <span className="relative inline-block">
+              <span 
+                className="text-gradient-gold inline-block cursor-default transition-all duration-500 hover:scale-105 hover:[text-shadow:0_0_30px_rgba(212,175,55,0.8),0_0_60px_rgba(212,175,55,0.4)]"
+              >
+                brilho
+              </span>
+              {' '}de novo
               {/* Underline decorativo */}
               <span className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-gold-dark via-gold to-gold-light rounded-full" />
             </span>
@@ -72,7 +77,7 @@ export function HeroSection() {
 
           {/* Subheadline */}
           <p 
-            className="animate-slide-up text-lg md:text-xl text-cream-dark max-w-2xl mb-8 md:mb-10 leading-relaxed"
+            className="animate-slide-up text-lg md:text-xl text-cream-dark max-w-2xl mb-8 mt-8 md:mb-10 leading-relaxed"
             style={{ animationDelay: '0.1s' }}
           >
             Transformamos seu veículo com cuidado profissional e atenção aos detalhes. 

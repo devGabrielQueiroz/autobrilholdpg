@@ -96,12 +96,6 @@ function DiferencialCard({ diferencial }: { diferencial: Diferencial }) {
 export function DiferenciaisSection() {
   return (
     <section id="diferenciais" className="section bg-dark-900 relative overflow-hidden">
-      {/* Background decorativo */}
-      <div className="absolute inset-0">
-        {/* Linha dourada decorativa */}
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
-      </div>
-
       <Container className="relative z-10">
         {/* Header da seção */}
         <div className="text-center mb-12 md:mb-16">
