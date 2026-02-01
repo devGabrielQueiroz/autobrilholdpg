@@ -33,7 +33,6 @@ const services: Service[] = [
     description: 'Lavagem interna e externa com aspiração e hidratação do painel.',
     price: 85,
     duration: '1h',
-    popular: true,
     features: ['Lavagem externa', 'Limpeza interna', 'Aspiração', 'Hidratação do painel'],
   },
   {
@@ -42,6 +41,7 @@ const services: Service[] = [
     description: 'Tratamento completo com cera de proteção e finalização impecável.',
     price: 105,
     duration: '1h30',
+    popular: true,
     features: ['Tudo da Completa', 'Cera de proteção', 'Pretinho nos pneus', 'Revitalização de plásticos'],
   },
   {
