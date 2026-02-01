@@ -3,7 +3,8 @@
  * Primeira impressão visual com headline e CTA
  */
 
-import { Container, Button } from '../ui';
+import { useState } from 'react';
+import { Container, Button, AgendamentoModal } from '../ui';
 
 // Ícone de brilho/estrela
 const SparkleIcon = () => (
@@ -20,11 +21,12 @@ const PlayIcon = () => (
 );
 
 export function HeroSection() {
-  // Função para abrir WhatsApp
+  // Estado para o modal de agendamento
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Função para abrir modal de agendamento
   const handleAgendar = () => {
-    const whatsappNumber = '5511999999999'; // Substituir pelo número real
-    const message = encodeURIComponent('Olá! Gostaria de agendar um serviço na AutoBrilho.');
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    setIsModalOpen(true);
   };
 
   // Função para rolar até serviços
@@ -133,6 +135,9 @@ export function HeroSection() {
           </svg>
         </button>
       </div>
+
+      {/* Modal de escolha de agendamento */}
+      <AgendamentoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

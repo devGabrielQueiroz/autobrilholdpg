@@ -4,7 +4,7 @@
  */
 
 import { useState, useEffect, useRef } from 'react';
-import { Container, Button } from '../ui';
+import { Container, Button, AgendamentoModal } from '../ui';
 import { Logo } from './Logo';
 
 // Seções para navegação
@@ -19,6 +19,8 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   // Estado para a seção ativa
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  // Estado para o modal de agendamento
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Ref para os links de navegação
   const navRefs = useRef<{ [key: string]: HTMLButtonElement | HTMLAnchorElement | null }>({});
   // Estado para posição do indicador
@@ -102,11 +104,9 @@ export function Header() {
     }
   };
 
-  // Função para abrir WhatsApp
+  // Função para abrir modal de agendamento
   const handleAgendar = () => {
-    const whatsappNumber = '5511999999999'; // Substituir pelo número real
-    const message = encodeURIComponent('Olá! Gostaria de agendar um serviço na AutoBrilho.');
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    setIsModalOpen(true);
   };
 
   return (
@@ -206,6 +206,9 @@ export function Header() {
           </div>
         </div>
       </div>
+
+      {/* Modal de escolha de agendamento */}
+      <AgendamentoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </header>
   );
 }

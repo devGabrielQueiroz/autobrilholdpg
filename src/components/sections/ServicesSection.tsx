@@ -3,7 +3,8 @@
  * Cards responsivos com preços e CTAs
  */
 
-import { Container, Card, Button, Badge } from '../ui';
+import { useState } from 'react';
+import { Container, Card, Button, Badge, AgendamentoModal } from '../ui';
 
 // Interface para os serviços
 interface Service {
@@ -76,16 +77,7 @@ const ClockIcon = () => (
 );
 
 // Componente do card de serviço
-function ServiceCard({ service }: { service: Service }) {
-  // Função para abrir WhatsApp com serviço pré-selecionado
-  const handleAgendar = () => {
-    const whatsappNumber = '5511999999999';
-    const message = encodeURIComponent(
-      `Olá! Gostaria de agendar o serviço: ${service.name} (R$${service.price})`
-    );
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-  };
-
+function ServiceCard({ service, onAgendar }: { service: Service; onAgendar: () => void }) {
   return (
     <Card
       variant="glow"
@@ -142,7 +134,7 @@ function ServiceCard({ service }: { service: Service }) {
 
         {/* CTA */}
         <Button
-          onClick={handleAgendar}
+          onClick={onAgendar}
           variant={service.popular ? 'primary' : 'secondary'}
           fullWidth
           size="sm"
@@ -155,6 +147,14 @@ function ServiceCard({ service }: { service: Service }) {
 }
 
 export function ServicesSection() {
+  // Estado para o modal de agendamento
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Função para abrir modal de agendamento
+  const handleAgendar = () => {
+    setIsModalOpen(true);
+  };
+
   return (
     <section id="servicos" className="section bg-dark-800 relative">
       {/* Background decorativo */}
@@ -179,7 +179,7 @@ export function ServicesSection() {
         {/* Grid de cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service) => (
-            <ServiceCard key={service.id} service={service} />
+            <ServiceCard key={service.id} service={service} onAgendar={handleAgendar} />
           ))}
         </div>
 
@@ -200,6 +200,9 @@ export function ServicesSection() {
           </Button>
         </div>
       </Container>
+
+      {/* Modal de escolha de agendamento */}
+      <AgendamentoModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }

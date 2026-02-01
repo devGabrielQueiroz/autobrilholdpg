@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Confirme seu cadastro - AutoBrilho</title>
+  <!--[if mso]>
+  <noscript>
+    <xml>
+      <o:OfficeDocumentSettings>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+    </xml>
+  </noscript>
+  <![endif]-->
+  <style>
+    /* Reset */
+    body, table, td, p, a, li, blockquote {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    table, td {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+    }
+    img {
+      -ms-interpolation-mode: bicubic;
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      background-color: #0a0a0a;
+    }
+    
+    /* Links */
+    a {
+      color: #d4a853;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #e8c171;
+    }
+    
+    /* Button hover */
+    .button:hover {
+      background-color: #e8c171 !important;
+    }
+    
+    /* Responsive */
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+        padding: 20px !important;
+      }
+      .content {
+        padding: 30px 20px !important;
+      }
+      .logo-text {
+        font-size: 28px !important;
+      }
+      .heading {
+        font-size: 24px !important;
+      }
+      .button {
+        width: 100% !important;
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #0a0a0a; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  
+  <!-- Preview text (hidden) -->
+  <div style="display: none; max-height: 0; overflow: hidden;">
+    Confirme seu email para acessar o painel administrativo da AutoBrilho ✨
+  </div>
+  
+  <!-- Spacer for preview text -->
+  <div style="display: none; max-height: 0px; overflow: hidden;">
+    &nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+  </div>
+
+  <!-- Main wrapper -->
+  <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #0a0a0a;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        
+        <!-- Container -->
+        <table role="presentation" cellpadding="0" cellspacing="0" width="600" class="container" style="max-width: 600px;">
+          
+          <!-- Logo -->
+          <tr>
+            <td align="center" style="padding-bottom: 30px;">
+              <table role="presentation" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <h1 class="logo-text" style="margin: 0; font-size: 36px; font-weight: 700;">
+                      <span style="color: #d4a853;">Auto</span><span style="color: #f5f5f5;">Brilho</span>
+                    </h1>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Card principal -->
+          <tr>
+            <td>
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #141414; border-radius: 16px; border: 1px solid #242424; overflow: hidden;">
+                
+                <!-- Header -->
+                <tr>
+                  <td style="background-color: #0a0a0a; padding: 30px; text-align: center; border-bottom: 1px solid #d4a853;">
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+                      <tr>
+                        <td align="center">
+                          <!-- Ícone de email/check -->
+                          <div style="width: 70px; height: 70px; background-color: #1a1a1a; border: 2px solid #d4a853; border-radius: 50%; margin: 0 auto 15px; line-height: 70px; text-align: center;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Email" width="35" height="35" style="filter: brightness(0) invert(1); vertical-align: middle;">
+                          </div>
+                          <h2 style="margin: 0; color: #ffffff; font-size: 22px; font-weight: 600;">
+                            Confirme seu email
+                          </h2>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                
+                <!-- Conteúdo -->
+                <tr>
+                  <td class="content" style="padding: 40px;">
+                    
+                    <!-- Saudação -->
+                    <p style="margin: 0 0 20px; color: #f5f5f5; font-size: 16px; line-height: 1.6;">
+                      Olá, <strong style="color: #d4a853;">{{ .Name }}</strong>! 👋
+                    </p>
+                    
+                    <p style="margin: 0 0 25px; color: #b0b0b0; font-size: 15px; line-height: 1.7;">
+                      Obrigado por criar sua conta no painel administrativo da <strong style="color: #f5f5f5;">AutoBrilho</strong>. 
+                      Para garantir a segurança da sua conta, precisamos confirmar seu endereço de email.
+                    </p>
+                    
+                    <!-- Botão CTA -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin: 30px 0;">
+                      <tr>
+                        <td align="center">
+                          <a href="{{ .ConfirmationURL }}" class="button" style="display: inline-block; padding: 16px 40px; background-color: #d4a853; color: #0a0a0a; font-size: 16px; font-weight: 600; text-decoration: none; border-radius: 10px; transition: background-color 0.3s;">
+                            ✓ Confirmar meu email
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <!-- Link alternativo -->
+                    <p style="margin: 25px 0 0; color: #666666; font-size: 13px; line-height: 1.6; text-align: center;">
+                      Se o botão não funcionar, copie e cole o link abaixo no seu navegador:
+                    </p>
+                    <p style="margin: 10px 0 0; padding: 15px; background-color: #1a1a1a; border-radius: 8px; word-break: break-all;">
+                      <a href="{{ .ConfirmationURL }}" style="color: #d4a853; font-size: 12px; text-decoration: none;">
+                        {{ .ConfirmationURL }}
+                      </a>
+                    </p>
+                    
+                    <!-- Aviso de expiração -->
+                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-top: 30px;">
+                      <tr>
+                        <td style="background-color: #1a1a1a; border-left: 4px solid #d4a853; padding: 15px; border-radius: 0 8px 8px 0;">
+                          <p style="margin: 0; color: #b0b0b0; font-size: 13px;">
+                            ⏱️ Este link expira em <strong style="color: #f5f5f5;">24 horas</strong>. 
+                            Caso expire, você pode solicitar um novo na página de login.
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                  </td>
+                </tr>
+                
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Aviso de segurança -->
+          <tr>
+            <td style="padding: 30px 0;">
+              <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="background-color: #141414; border-radius: 12px; border: 1px solid #242424;">
+                <tr>
+                  <td style="padding: 20px;">
+                    <p style="margin: 0; color: #666666; font-size: 13px; line-height: 1.6; text-align: center;">
+                      🔒 Se você não criou uma conta na AutoBrilho, ignore este email. 
+                      Sua segurança é importante para nós.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          
+          <!-- Footer -->
+          <tr>
+            <td style="padding: 20px 0; text-align: center; border-top: 1px solid #242424;">
+              
+              <!-- Logo pequeno -->
+              <p style="margin: 0 0 15px;">
+                <span style="color: #d4a853; font-weight: 700; font-size: 18px;">Auto</span><span style="color: #666666; font-weight: 700; font-size: 18px;">Brilho</span>
+              </p>
+              
+              <!-- Tagline -->
+              <p style="margin: 0 0 15px; color: #666666; font-size: 13px;">
+                Estética Automotiva Premium ✨
+              </p>
+              
+              <!-- Links sociais -->
+              <p style="margin: 0 0 20px;">
+                <a href="#" style="display: inline-block; margin: 0 8px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" width="24" height="24" style="opacity: 0.5;">
+                </a>
+                <a href="#" style="display: inline-block; margin: 0 8px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" width="24" height="24" style="opacity: 0.5;">
+                </a>
+                <a href="#" style="display: inline-block; margin: 0 8px;">
+                  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="24" height="24" style="opacity: 0.5;">
+                </a>
+              </p>
+              
+              <!-- Copyright -->
+              <p style="margin: 0; color: #444444; font-size: 12px;">
+                © 2026 AutoBrilho. Todos os direitos reservados.
+              </p>
+              
+            </td>
+          </tr>
+          
+        </table>
+        
+      </td>
+    </tr>
+  </table>
+  
+</body>
+</html>
