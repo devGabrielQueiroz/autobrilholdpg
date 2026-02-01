@@ -25,7 +25,7 @@ export function Footer() {
 
   // Função para abrir WhatsApp
   const handleWhatsApp = () => {
-    const whatsappNumber = '5511999999999'; // Substituir pelo número real
+    const whatsappNumber = '5561996856704';
     const message = encodeURIComponent('Olá! Gostaria de saber mais sobre a AutoBrilho.');
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };

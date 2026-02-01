@@ -191,7 +191,7 @@ export function ServicesSection() {
           <Button
             variant="secondary"
             onClick={() => {
-              const whatsappNumber = '5511999999999';
+              const whatsappNumber = '5561996856704';
               const message = encodeURIComponent('Olá! Gostaria de um orçamento personalizado.');
               window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
             }}

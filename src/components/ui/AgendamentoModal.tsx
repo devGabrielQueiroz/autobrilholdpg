@@ -63,7 +63,7 @@ export function AgendamentoModal({ isOpen, onClose }: AgendamentoModalProps) {
 
   // Abrir WhatsApp
   const handleWhatsApp = () => {
-    const phone = '5511999999999'; // Substituir pelo número real
+    const phone = '5561996856704';
     const message = encodeURIComponent('Olá! Gostaria de agendar um serviço de estética automotiva.');
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
     onClose();

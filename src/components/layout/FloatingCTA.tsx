@@ -33,7 +33,7 @@ export function FloatingCTA() {
 
   // Função para abrir WhatsApp
   const handleClick = () => {
-    const whatsappNumber = '5511999999999'; // Substituir pelo número real
+    const whatsappNumber = '5561996856704';
     const message = encodeURIComponent('Olá! Gostaria de agendar um serviço na AutoBrilho.');
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
