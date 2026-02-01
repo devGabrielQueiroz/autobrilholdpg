@@ -1,9 +1,11 @@
 /**
  * AgendamentoModal - Modal de escolha entre WhatsApp e Agendamento Online
  * Permite ao usuário escolher como deseja agendar seu serviço
+ * Usa React Portal para garantir posicionamento correto independente do scroll
  */
 
 import { useEffect, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { useNavigate } from 'react-router-dom';
 
 interface AgendamentoModalProps {
@@ -75,8 +77,14 @@ export function AgendamentoModal({ isOpen, onClose }: AgendamentoModalProps) {
 
   if (!isOpen) return null;
 
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+  // Usar Portal para renderizar diretamente no body
+  // Isso garante que o modal funcione corretamente independente do scroll
+  // e não seja afetado por transforms ou contextos de stacking dos parents
+  const modalContent = (
+    <div 
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+    >
       {/* Backdrop */}
       <div 
         className="absolute inset-0 bg-dark-900/80 backdrop-blur-sm animate-fade-in"
@@ -188,4 +196,7 @@ export function AgendamentoModal({ isOpen, onClose }: AgendamentoModalProps) {
       </div>
     </div>
   );
+
+  // Renderizar no body usando Portal
+  return createPortal(modalContent, document.body);
 }
